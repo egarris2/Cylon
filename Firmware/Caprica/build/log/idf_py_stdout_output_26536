@@ -1,0 +1,69 @@
+[1/5] cmd.exe /C "cd /D C:\Users\tgarrison\Cylon\web_controlled_leds\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.0/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/tgarrison/Cylon/web_controlled_leds/build/partition_table/partition-table.bin C:/Users/tgarrison/Cylon/web_controlled_leds/build/web_controlled_leds.bin"
+web_controlled_leds.bin binary size 0xba790 bytes. Smallest app partition is 0x100000 bytes. 0x45870 bytes (27%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\tgarrison\Cylon\web_controlled_leds\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.0/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/tgarrison/Cylon/web_controlled_leds/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5150 bytes. 0x2eb0 bytes (36%) free.
+[2/3] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.0\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.0 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.0_py3.8_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.0/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/tgarrison/Cylon/web_controlled_leds/build -P C:/Espressif/frameworks/esp-idf-v5.0/components/esptool_py/run_serial_tool.cmake"
+esptool esp32s3 -p com8 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 web_controlled_leds.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.5
+Serial port com8
+Connecting...
+Failed to get PID of a device on com8, using standard reset sequence.
+
+Chip is ESP32-S3 (revision v0.1)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: f4:12:fa:92:2f:78
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000cafff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20816 bytes to 13276...
+Writing at 0x00000000... (100 %)
+Wrote 20816 bytes (13276 compressed) at 0x00000000 in 0.3 seconds (effective 535.1 kbit/s)...
+Hash of data verified.
+Compressed 763792 bytes to 480459...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001ca78... (6 %)
+Writing at 0x0002616e... (10 %)
+Writing at 0x0002b694... (13 %)
+Writing at 0x00035d5b... (16 %)
+Writing at 0x0003befa... (20 %)
+Writing at 0x00041e11... (23 %)
+Writing at 0x00047fef... (26 %)
+Writing at 0x0004e099... (30 %)
+Writing at 0x00053da0... (33 %)
+Writing at 0x0005996e... (36 %)
+Writing at 0x0005f3e8... (40 %)
+Writing at 0x00064281... (43 %)
+Writing at 0x00069307... (46 %)
+Writing at 0x0006e3e0... (50 %)
+Writing at 0x0007365c... (53 %)
+Writing at 0x00078b2a... (56 %)
+Writing at 0x0007eb54... (60 %)
+Writing at 0x000841a3... (63 %)
+Writing at 0x00089984... (66 %)
+Writing at 0x0008f1a1... (70 %)
+Writing at 0x00094a71... (73 %)
+Writing at 0x0009a253... (76 %)
+Writing at 0x000a0193... (80 %)
+Writing at 0x000a69ec... (83 %)
+Writing at 0x000ac347... (86 %)
+Writing at 0x000b26e1... (90 %)
+Writing at 0x000bcb85... (93 %)
+Writing at 0x000c2b5d... (96 %)
+Writing at 0x000c8481... (100 %)
+Wrote 763792 bytes (480459 compressed) at 0x00010000 in 4.5 seconds (effective 1347.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 569.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
