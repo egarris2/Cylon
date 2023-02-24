@@ -1,5 +1,5 @@
 # Cylon
-Development with an ESP32-s3-wroom-1 wifi module and a row of addressable LEDs. 
+Development board with an ESP32-s3-wroom-1 wifi module and a row of addressable LEDs. 
 
 View the easyEDA project at https://oshwlab.com/egarris2/cylon
 
